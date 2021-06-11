@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<h1 style="background-color:powderblue;">iAvenue Yield Predictor</h1>
+
+ <form action="{{url_for('predict')}}"method="post">
+     <!--div class="wrapper"-->
+	 <select id="parent_select" name="State_Name"><option>Select_State</option></select>
+	 <select id="child_select" name="District_Name"><option>Select_District</option></select>
+     <!--/div-->
+
+    <!--select id="Crop_Year" name="Crop_Year">
+	<option>Crop_Year</option>
+	<option>1997</option>
+	<option>1998</option>
+	<option>1999</option>
+	<option>2000</option>
+	<option>2001</option>
+	<option>2002</option>
+	<option>2003</option>
+	<option>2004</option>
+	<option>2005</option>
+	<option>2006</option>
+	<option>2007</option>
+	<option>2008</option>
+	<option>2009</option>
+	<option>2010</option>
+	<option>2011</option>
+	<option>2012</option>
+	<option>2013</option>
+	<option>2014</option>
+	<option>2015</option>
+	
+	
+	</select-->
+		<!--select id="Season" name="Season">
+		<option>Select_Season</option>
+		<option>Kharif</option>
+		<option>Rabi</option>
+		<option>Summer</option>
+		<option>Winter</option>
+		<option>Wholeyear</option>
+		<option>Autumn</option>
+
+		</select-->
+		<input type="number" name="Crop_Year" placeholder="Crop_Year" required="required" />
+		<select id="parent_select1" name="Season"><option>Select_Season</option></select>
+		<select id="child_select1" name="Crop"><option>Select_Crop</option></select>
+		
+		<!--input type="text" name="Season" placeholder="Season" required="required" />
+		<input type="text" name="Crop" placeholder="Crop" required="required" /-->
+		<input type="number" name="Area" placeholder="Area in ha" required="required" />
+
+
+		
+		<button type="submit" class="btn btn-primary btn-block btn-large">predict</button>
+		
+	</form>
+	<br>
+	<br>
+	{{prediction_text}}
+	<br>
+	{{state}}
+	<br>
+	{{district}}
+	<br>
+	{{year}}
+	<br>
+	{{season}}
+	<br>
+	{{crop}}
+	<br>
+	{{Area}}
+	<br>
+	<br>
+	{{max1}}
+	<br>
+	<br>
+	{{max2}}
+	<br>
+	<br>
+	{{max3}}
+	<br>
+	<br>
+	{{max4}}
+	<br>
+	<br>
+	{{max5}}
+	<br>
+	<!--{{prediction_text1}}
+	<br>
+	<br>
+	{{prediction_text2}}
+	<br>
+	<br>
+	{{prediction_text3}}
+	<br>
+	<br>
+	{{prediction_text4}}
+	<br>
+	{{prediction_text5}}
+	<br>
+	{{crop1}}
+	<br>
+	<br>
+	{{crop2}}
+	<br>
+	<br>
+	{{crop3}}
+	<br>
+	<br>
+	{{crop4}}
+	<br>
+	{{crop5}}-->
+	<div id="jsonoutput" style="width: 100%; height: 100%"></div>
+	<br>
+	<br>
+	<div id="jsonoutput1" style="width: 100%; height: 100%"></div>
+	 <div id="container" style="width: 100%; height: 100%"></div>
+	 <div id="container1" style="width: 100%; height: 100%"></div>
+	 <div id="container2" style="width: 100%; height: 100%"></div>
+	</div>
+	
+	</body>
+	</html>
+	
+	
+	<script language="javascript" type="text/javascript">  
+var mList = {
+	AndamanandNicobarIslands: ['Nicobars', 'North and Middle Andaman', 'South Andamans'],
+	AndhraPradesh :  ['ANANTAPUR','CHITTOOR','EAST GODAVARI','GUNTUR','KADAPA','KRISHNA','KURNOOL','PRAKASAM','SPSR NELLORE','SRIKAKULAM','VISAKHAPATANAM','VIZIANAGARAM','WEST GODAVARI'],
+	ArunachalPradesh :  ['ANJAW','CHANGLANG','DIBANG VALLEY','EAST KAMENG','EAST SIANG','KURUNG KUMEY','LOHIT','LONGDING','LOWER DIBANG VALLEY','LOWER SUBANSIRI','NAMSAI','PAPUM PARE','TAWANG',
+	                     'TIRAP','UPPER SIANG','UPPER SUBANSIRI','WEST KAMENG','WEST SIANG'],
+	Assam : ['BAKSA','BARPETA','BONGAIGAON','CACHAR','CHIRANG','DARRANG','DHEMAJI','DHUBRI','DIBRUGARH','DIMA HASAO','GOALPARA','GOLAGHAT','HAILAKANDI','JORHAT','KAMRUP','KAMRUP METRO',
+	         'KARBI ANGLONG','KARIMGANJ','KOKRAJHAR','LAKHIMPUR','MARIGAON','NAGAON','NALBARI','SIVASAGAR','SONITPUR','TINSUKIA','UDALGURI'],
+	Bihar : ['ARARIA','ARWAL','AURANGABAD','BANKA','BEGUSARAI','BHAGALPUR','BHOJPUR','BUXAR','DARBHANGA','GAYA','GOPALGANJ','JAMUI','JEHANABAD','KAIMUR','BHABUA','KATIHAR','KHAGARIA',
+	         'KISHANGANJ','LAKHISARAI','MADHEPURA','MADHUBANI','MUNGER','MUZAFFARPUR','NALANDA','NAWADA','PASHCHIM CHAMPARAN','PATNA','PURBI CHAMPARAN','PURNIA','ROHTAS','SAHARSA','SAMASTIPUR',
+			 'SARAN','SHEIKHPURA','SHEOHAR','SITAMARHI','SIWAN','SUPAUL','VAISHALI'],
+    Chandigarh : ['CHANDIGARH'],
+    Chhattishgarh : ['BALOD','BALODA BAZAR','BALRAMPUR','BASTAR','BEMETARA','BIJAPUR','BILASPUR','DANTEWADA','DHAMTARI','DURG','GARIYABAND','JANJGIR-CHAMPA','JASHPUR','KABIRDHAM','KANKER',
+	                 'KONDAGAON','KORBA','KOREA','MAHASAMUND','MUNGELI','NARAYANPUR','RAIGARH','RAIPUR','RAJNANDGAON','SUKMA','SURAJPUR','SURGUJA'],
+    Dadraandnagarhavelli : ['DADRA AND NAGARHAVELI'],
+    Goa : ['NORTH GOA','SOUTH GOA'],
+    Gujarat : ['AHMADABAD','AMRELI','ANAND','BANAS KANTHA','BHARUCH','BHAVNAGAR','DANG','DOHAD','GANDHINAGAR','JAMNAGAR','JUNAGADH','KACHCHH','KHEDA','MAHESANA','NARMADA','NAVSARI',
+	          'PANCH MAHALS','PATAN','PORBANDAR','RAJKOT','SABAR KANTHA','SURAT','SURENDRANAGAR','TAPI','VADODARA','VALSAD'],
+    Haryana : ['AMBALA','BHIWANI','FARIDABAD','FATEHABAD','GURGAON','HISAR','JHAJJAR','JIND','KAITHAL','KARNAL','KURUKSHETRA','MAHENDRAGARH','MEWAT','PALWAL','PANCHKULA','PANIPAT',
+	           'REWARI','ROHTAK','SIRSA','SONIPAT','YAMUNANAGAR'],
+HimachalPradesh : ['BILASPUR','CHAMBA','HAMIRPUR','KANGRA','KINNAUR','KULLU','LAHUL AND SPITI','MANDI','SHIMLA','SIRMAUR','SOLAN','UNA'],
+JammuAndKashmir : ['ANANTNAG','BADGAM','BANDIPORA','BARAMULLA','DODA','GANDERBAL','JAMMU','KARGIL','KATHUA','KISHTWAR','KULGAM','KUPWARA','LEH LADAKH','POONCH','PULWAMA','RAJAURI',
+                   'RAMBAN','REASI','SAMBA','SHOPIAN','SRINAGAR','UDHAMPUR'],
+Jharkhand : ['BOKARO','CHATRA','DEOGHAR','DHANBAD','DUMKA','EAST SINGHBUM','GARHWA','GIRIDIH','GODDA','GUMLA','HAZARIBAGH','JAMTARA','KHUNTI','KODERMA','LATEHAR','LOHARDAGA','PAKUR',
+             'PALAMU','RAMGARH','RANCHI','SAHEBGANJ','SARAIKELA KHARSAWAN','SIMDEGA','WEST SINGHBHUM'],
+Karnataka : ['BAGALKOT','BANGALORE RURAL','BELGAUM','BELLARY','BENGALURU URBAN','BIDAR','BIJAPUR','CHAMARAJANAGAR','CHIKBALLAPUR','CHIKMAGALUR','CHITRADURGA','DAKSHIN KANNAD',
+             'DAVANGERE','DHARWAD','GADAG','GULBARGA','HASSAN','HAVERI','KODAGU','KOLAR','KOPPAL','MANDYA','MYSORE','RAICHUR','RAMANAGARA','SHIMOGA','TUMKUR','UDUPI','UTTAR KANNAD',
+			 'YADGIR'],
+Kerala : ['ALAPPUZHA','ERNAKULAM','IDUKKI','KANNUR','KASARAGOD','KOLLAM','KOTTAYAM','KOZHIKODE','MALAPPURAM','PALAKKAD','PATHANAMTHITTA','THIRUVANANTHAPURAM','THRISSUR','WAYANAD'],
+
+MadhyaPradesh : ['AGAR MALWA','ALIRAJPUR','ANUPPUR','ASHOKNAGAR','BALAGHAT','BARWANI','BETUL','BHIND','BHOPAL','BURHANPUR','CHHATARPUR','CHHINDWARA','DAMOH','DATIA','DEWAS','DHAR','DINDORI','GUNA',
+                 'GWALIOR','HARDA','HOSHANGABAD','INDORE','JABALPUR','JHABUA','KATNI','KHANDWA','KHARGONE','MANDLA','MANDSAUR','MORENA','NARSINGHPUR','NEEMUCH','PANNA','RAISEN','RAJGARH','RATLAM',
+				 'REWA','SAGAR','SATNA','SEHORE','SEONI','SHAHDOL','SHAJAPUR','SHEOPUR','SHIVPURI','SIDHI','SINGRAULI','TIKAMGARH','UJJAIN','UMARIA','VIDISHA'],
+				 
+Maharashtra : ['AHMEDNAGAR','AKOLA','AMRAVATI','AURANGABAD','BEED','BHANDARA','BULDHANA','CHANDRAPUR','DHULE','GADCHIROLI','GONDIA','HINGOLI','JALGAON','JALNA','KOLHAPUR','LATUR','MUMBAI','NAGPUR',
+               'NANDED','NANDURBAR','NASHIK','OSMANABAD','PALGHAR','PARBHANI','PUNE','RAIGAD','RATNAGIRI','SANGLI','SATARA','SINDHUDURG','SOLAPUR','THANE','WARDHA','WASHIM','YAVATMAL'],
+Manipur : ['BISHNUPUR','CHANDEL','CHURACHANDPUR','IMPHAL EAST','IMPHAL WEST','SENAPATI','TAMENGLONG','THOUBAL','UKHRUL'],
+Meghalaya : ['EAST GARO HILLS','EAST JAINTIA HILLS','EAST KHASI HILLS','NORTH GARO HILLS','RI BHOI','SOUTH GARO HILLS','SOUTH WEST GARO HILLS','SOUTH WEST KHASI HILLS','WEST GARO HILLS','WEST JAINTIA HILLS',
+             'WEST KHASI HILLS'],
+Mizoram : ['AIZAWL','CHAMPHAI','KOLASIB','LAWNGTLAI','LUNGLEI','MAMIT','SAIHA','SERCHHIP'],
+Nagaland : ['MON','DIMAPUR','KIPHIRE','KOHIMA','LONGLENG','MOKOKCHUNG','PEREN','PHEK','TUENSANG','WOKHA','ZUNHEBOTO'],
+Odisha : ['ANUGUL','BALANGIR','BALESHWAR','BARGARH','BHADRAK','BOUDH','CUTTACK','DEOGARH','DHENKANAL','GAJAPATI','GANJAM','JAGATSINGHAPUR','JAJAPUR','JHARSUGUDA','KALAHANDI','KANDHAMAL','KENDRAPARA','KENDUJHAR',
+          'KHORDHA','KORAPUT','MALKANGIRI','MAYURBHANJ','NABARANGPUR','NAYAGARH','NUAPADA','PURI','RAYAGADA','SAMBALPUR','SONEPUR','SUNDARGARH'],
+Puducherry : ['KARAIKAL','MAHE','PONDICHERRY','YANAM'],
+Punjab : ['AMRITSAR','BARNALA','BATHINDA','FARIDKOT','FATEHGARH SAHIB','FAZILKA','FIROZEPUR','GURDASPUR','HOSHIARPUR','JALANDHAR','KAPURTHALA','LUDHIANA','MANSA','MOGA','MUKTSAR','NAWANSHAHR','PATHANKOT','PATIALA',
+          'RUPNAGAR','S.A.S NAGAR','SANGRUR','TARN TARAN'],
+Rajasthan : ['AJMER','ALWAR','BANSWARA','BARAN','BARMER','BHARATPUR','BHILWARA','BIKANER','BUNDI','CHITTORGARH','CHURU','DAUSA','DHOLPUR','DUNGARPUR','GANGANAGAR','HANUMANGARH','JAIPUR','JAISALMER','JALORE',
+             'JHALAWAR','JHUNJHUNU','JODHPUR','KARAULI','KOTA','NAGAUR','PALI','PRATAPGARH','RAJSAMAND','SAWAI MADHOPUR','SIKAR','SIROHI','TONK','UDAIPUR'],
+Sikkim : ['EAST DISTRICT','NORTH DISTRICT','SOUTH DISTRICT','WEST DISTRICT'],
+TamilNadu : ['ARIYALUR','COIMBATORE','CUDDALORE','DHARMAPURI','DINDIGUL','ERODE','KANCHIPURAM','KANNIYAKUMARI','KARUR','KRISHNAGIRI',
+             'MADURAI','NAGAPATTINAM','NAMAKKAL','PERAMBALUR','PUDUKKOTTAI','RAMANATHAPURAM','SALEM','SIVAGANGA','THANJAVUR','THE NILGIRIS',
+			 'THENI','THIRUVALLUR','THIRUVARUR','TIRUCHIRAPPALLI','TIRUNELVELI','TIRUPPUR','TIRUVANNAMALAI','TUTICORIN','VELLORE','VILLUPURAM','VIRUDHUNAGAR'],
+Telangana : ['ADILABAD','HYDERABAD','KARIMNAGAR','KHAMMAM','MAHBUBNAGAR','MEDAK','NALGONDA','NIZAMABAD','RANGAREDDI','WARANGAL'],
+Tripura : ['DHALAI','GOMATI','KHOWAI','NORTH TRIPURA','SEPAHIJALA','SOUTH TRIPURA','UNAKOTI','WEST TRIPURA'],
+UttarPradesh : ['AGRA','ALIGARH','ALLAHABAD','AMBEDKAR NAGAR','AMETHI','AMROHA','AURAIYA','AZAMGARH','BAGHPAT','BAHRAICH','BALLIA','BALRAMPUR','BANDA','BARABANKI','BAREILLY','BASTI','BIJNOR','BUDAUN','BULANDSHAHR',
+                'CHANDAULI','CHITRAKOOT','DEORIA','ETAH','ETAWAH','FAIZABAD','FARRUKHABAD','FATEHPUR','FIROZABAD','GAUTAM BUDDHA NAGAR','GHAZIABAD','GHAZIPUR','GONDA','GORAKHPUR','HAMIRPUR','HAPUR','HARDOI','HATHRAS',
+				'JALAUN','JAUNPUR','JHANSI','KANNAUJ','KANPUR DEHAT','KANPUR NAGAR','KASGANJ','KAUSHAMBI','KHERI','KUSHI NAGAR','LALITPUR','LUCKNOW','MAHARAJGANJ','MAHOBA','MAINPURI','MATHURA','MAU','MEERUT','MIRZAPUR',
+				'MORADABAD','MUZAFFARNAGAR','PILIBHIT','PRATAPGARH','RAE BARELI','RAMPUR','SAHARANPUR','SAMBHAL','SANT KABEER NAGAR','SANT RAVIDAS NAGAR','SHAHJAHANPUR','SHAMLI','SHRAVASTI','SIDDHARTH NAGAR','SITAPUR',
+				'SONBHADRA','SULTANPUR','UNNAO','VARANASI'],
+Uttarakhand : ['ALMORA','BAGESHWAR','CHAMOLI','CHAMPAWAT','DEHRADUN','HARIDWAR','NAINITAL','PAURI GARHWAL','PITHORAGARH','RUDRA PRAYAG','TEHRI GARHWAL','UDAM SINGH NAGAR','UTTAR KASHI'],
+WestBengal : ['24 PARAGANAS NORTH','24 PARAGANAS SOUTH','BANKURA','BARDHAMAN','BIRBHUM','COOCHBEHAR','DARJEELING','DINAJPUR DAKSHIN','DINAJPUR UTTAR','HOOGHLY','HOWRAH','JALPAIGURI','MALDAH',
+              'MEDINIPUR EAST','MEDINIPUR WEST','MURSHIDABAD','NADIA','PURULIA'],			  
+    			 
+};
+
+el_parent = document.getElementById("parent_select");
+el_child = document.getElementById("child_select");
+
+    for (key in mList) {
+	el_parent.innerHTML = el_parent.innerHTML + '<option>'+ key +'</option>';
+       }
+
+el_parent.addEventListener('change', function populate_child(e){
+	el_child.innerHTML = '';
+	itm = e.target.value;
+	if(itm in mList){
+			for (i = 0; i < mList[itm].length; i++) {
+				el_child.innerHTML = el_child.innerHTML + '<option>'+ mList[itm][i] +'</option>';
+			}
+	}
+});
+</script>
+<script language="javascript" type="text/javascript">
+
+var mList1 = {
+	Kharif : ['Arhar/Tur','Banana','Barley','Cashewnut','Castor seed',
+				'Coconut','Cotton(lint)',
+				'Groundnut', 'Jowar',
+				'Mango', 'Moong(Green Gram)', 'Onion',
+				  'Potato',
+				'Rapeseed &Mustard', 'Rice',
+				'Soyabean', 'Sugarcane', 'Sunflower', 'Tobacco', 'Total foodgrain',
+				'Urad','Wheat'],
+				
+	Rabi : ['Arhar/Tur','Banana','Barley','Cashewnut','Castor seed','Cotton(lint)',
+			'Groundnut', 'Jowar','Maize', 'Moong(Green Gram)','Onion',
+			'Potato',
+				'Rapeseed &Mustard', 'Rice' ,
+				'Soyabean', 'Sugarcane', 'Sunflower', 'Tobacco',
+				'Urad', 'Wheat'],
+				
+	Summer : ['Arhar/Tur','Banana','Cotton(lint)','Groundnut', 'Jowar',
+				'Maize', 'Moong(Green Gram)','Onion','Potato','Rice',
+				'Sugarcane', 'Sunflower','Tobacco', 'Urad', 'Wheat'],
+				
+	Winter : ['Arhar/Tur','Banana','Cotton(lint)','Groundnut','Maize', 'Moong(Green Gram)',
+				'Onion','Potato','Rice','Rapeseed &Mustard',
+				'Soyabean', 'Sugarcane', 'Sunflower','Urad', 'Wheat'],
+				
+	Wholeyear : [ 'Arhar/Tur','Banana','Barley',
+					'Cashewnut','Castor seed',
+				'Coconut','Cotton(lint)',
+				'Groundnut', 'Jowar',
+				'Mango', 'Moong(Green Gram)','Maize',
+				'Onion',
+				 'Potato',
+				'Rice','Rapeseed &Mustard',
+				 'Sugarcane', 'Sunflower',
+				'Tobacco',
+				'Urad','Wheat'],
+	
+	Autumn : ['Arhar/Tur','Banana','Cotton(lint)','Groundnut','Jowar','Maize',
+				'Moong(Green Gram)','Onion','Potato','Rice',
+				'Sugarcane', 'Soyabean',
+				'Urad']
+				
+
+
+};
+
+el_parent1 = document.getElementById("parent_select1");
+el_child1 = document.getElementById("child_select1");
+
+    for (key in mList1) {
+	console.log(key);
+	el_parent1.innerHTML = el_parent1.innerHTML + '<option>'+ key +'</option>';
+       }
+
+el_parent1.addEventListener('change', function populate_child1(e){
+	el_child1.innerHTML = '';
+	itm1 = e.target.value;
+	if(itm1 in mList1){
+			for (i = 0; i < mList1[itm1].length; i++) {
+				el_child1.innerHTML = el_child1.innerHTML + '<option>'+ mList1[itm1][i] +'</option>';
+			}
+	}
+});
+
+</script>
+
+<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.0.0/themes/dark_earth.min.js" type="text/javascript"></script>
+
+<script>
+      anychart.onDocumentReady(function() {
+ 
+        // set the data
+        var data = {
+            header: ["Crop_Year", "Production"],
+            rows: [
+              [{{crop1}}, {{prediction_text1}}],
+              [{{crop2}}, {{prediction_text2}}],
+              [{{crop3}}, {{prediction_text3}}],
+              [{{crop4}}, {{prediction_text4}}],
+              [{{crop5}}, {{prediction_text5}}],
+            
+        ]};
+		console.log(data);
+        // create the chart
+		anychart.theme(anychart.themes.darkEarth)
+        var chart = anychart.line();
+		//var chart1 = anychart.column();
+		var chart2 = anychart.bar();
+        // add the data
+        chart.data(data);
+		//chart1.data(data);
+		chart2.data(data);
+        // set the chart title
+        chart.title("Crop production prediction");
+		//chart1.title("Crop production prediction");
+		chart2.title("Crop production prediction");
+        // draw
+        chart.container("container");
+        chart.draw();
+		//chart1.container("container1");
+		//chart1.draw();
+		chart2.container("container2");
+		chart2.draw();
+      });
+    </script>
+	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+	<script src="https://cdn.anychart.com/releases/8.0.0/themes/dark_earth.min.js" type="text/javascript"></script>
+	<script>
+      anychart.onDocumentReady(function() {
+ 
+        // set the data
+        var data = {
+            header: ["Area", "Production"],
+            rows: [
+              [{{Area_enter}}, {{prediction_Area}}],
+              [{{Area1}}, {{prediction_Area1}}],
+              [{{Area2}}, {{prediction_Area2}}],
+              [{{Area3}}, {{prediction_Area3}}],
+              [{{Area4}}, {{prediction_Area4}}],
+            
+        ]};
+		console.log(data);
+        // create the chart
+		anychart.theme(anychart.themes.darkEarth)
+        //var chart = anychart.line();
+		var chart1 = anychart.column();
+		//var chart2 = anychart.bar();
+        // add the data
+        //chart.data(data);
+		chart1.data(data);
+		//chart2.data(data);
+        // set the chart title
+        //chart.title("Crop production prediction");
+		chart1.title("Area VS Production");
+		//chart2.title("Crop production prediction");
+        // draw
+        //chart.container("container");
+        //chart.draw();
+		chart1.container("container1");
+		chart1.draw();
+		//chart2.container("container2");
+		//chart2.draw();
+      });
+    </script>
+	<script>
+	var describtions={"ArharTur":"ENERGY-343 KCAL CARBS-62.78G PROTEINS-21.7g FATS-1.49g ,Important crop in Dryland agriculture,Pods husk is used as cattle feed.Gives excellent yields even under soil condition",
+	"Banana" : "ENERGY-110 kcal CARBS-23g PROTEINS-1.1g FATS:0.3g,The various products like banana puree, powder, flour, chips, vinegar, jam, jelly and wine can be prepared.Second most traded fruit in the world.Fruit is a rich source of phosphorous and calcium.",
+	"Barley" : "ENERGY- 354 CARBS-73.5g PROTEINS-12.5 FATS-2.3g,Critical and primary raw material for beer production.Second most important crop after wheat in temperate countries.Nutritious food source.",
+	"Cabbage": "ENERGY: 25kcal CARBS:5.8g PROTEINS:1.3g FATS:0.1g,Highly nutritious vegetable crop.Used for making pickles and fermented products.Cabbage is used in soup making",
+	"Cashewnut" :"ENERGY: 543kcal CARBS:30g PROTEINS:18g FATS:44g.One of the most important commercial crops in the world Cashew nut is used to produce fermented beverage called Cashew Fenny.Has got much culinary importance across various cuisines.",
+	"Castorseed" : "Most important non-edible oilseed crop.Oil is used as an ingredient in automotive lubricants manufacturing.Castor seed cake is an important manure crop.",
+	"Coconut" : "ENERGY: 277 CARBS:10 PROTEINS:3 FATS:27,Coconut oil is widely used for cosmetic purposes and cooking.Water is a rich source of micronutrients.Copra produced from shells has got economic value.",
+	"Condspcsother" : "Have high export value.Major source of forex earning for the country.Medicinal properties are evident.Have got wide range of culinary applications.",
+	"Cottonlint" : "Most important fiber crop in India.Cotton oil is used for cooking purposes in some areas.Highly remunerative row crop, which feeds the textile industry.",
+	"Groundnut" : "ENERGY: 561 CARBS:16.1 PROTEINS:27.8 FATS:42.2,Most important oilseed crop.Hand picked peanuts have got high export potential.Rich source of vitamin E",
+	"Jowar" : "ENERGY: 339 CARBS:75g PROTEINS:11g FATS.3g,Most important millet crop in arid and semi-arid agri-climatic zones of the world.Crop has significantly high Water use efficiency.5th most important crop in the world.Major source of animal feed.",
+	"Maize" : "ENERGY: 96kcal CARBS:21g PROTEINS:3g FATS:0.5g Important crop for livestock feed.Used in producing starches, corn flour, popcorn and ethanol.3rd most important crop in the world.",
+	"Mango" : "ENERGY: 230kcal CARBS:11.6g PROTEINS:0.9g FATS:0.2g,Regarded as king of fruits.Most important fruit crop in India.Value added products of mango have high market value.Used for making jams, jellies, pickles, squashes and candies",
+	"MoongGreenGram" : "ENERGY: 347kcal CARBS:68g PROTEINS:26g FATS:1.15g ,Rich source of plant protein.Contains micronutrients.Has many culinary uses across cuisines in India",
+	"Onion" : "ENERGY: 40kcal CARBS:9g PROTEINS:1.1g FATS:0,1g Most important and widely consumed condiment in the world.Pungency of the onions is due to Allyl propyl disulphide.Has wide range of culinary applications.",
+	"Potato" : "ENERGY: 77kcal CARBS:17g PROTEINS:2g FATS:0.1g Most cultivated vegetable in the world.Important source of carbohydrates across the world.Potato is used by many fast food industries and snack industries",
+	"RapeseedMustard" :"ENERGY: 66kcal CARBS:5g PROTEINS:4.4g FATS:4g Oil extracted from seeds is of high economic and nutritional values.One of the important condiments in Indian cuisine.Oil seed cake is used as animal feed.",
+	"Sunflower" : "Most remunerative oil seed crop in India.Sunflower oil is widely used in India.Sunflower seeds are a rich source of micronutrients and minerals and are consumed in India.",
+	"Soyabean" : "ENERGY: 173kcal CARBS:9.1g PROTEINS:16.6g FATS:9g, Most important pulse crop in the world.Soy meal is used for culinary purposes across Asia.Fermented soy is used in various cuisines across the world.Highest source of protein among the pulses.",
+	"Sugarcane" : "ENERGY: 74kcal CARBS:20g PROTEINS:0g FATS:0g Most important sugar crop.Extensively grown across the regions in India.Byproducts like bagasse and molasses have industrial applications.Most significant raw material source for sugar industries",
+	"Tobacco" : "Most important intoxicant crop in the world.Various varieties of Tobacco are cultivated in various states of India.Tobacco contains a chemical called nicotine which acts as intoxicant.",
+	"Urad" : "ENERGY: 341kcal CARBS:58.99g PROTEINS:25.21g FATS:1.64g Widely cultivated pulse crop in all regions of India.Kernels are fermented and use in breakfast preparations in South India.",
+	"Wheat" :"ENERGY: 364kcal CARBS:76g PROTEINS:10g FATS:1g Most extensively grown crop in the world.Staple food for almost all temperate countries.Wheat is widely used in baking industry and bread making",
+	"Rice" : "ENERGY: 130KCAL CARBS:28.7 PROTEINS:2.36 FATS:0.19G Crop under highest area of cultivation in India.Most important cereal crop across the world.Staple food source in Asian countries"
+	
+	};
+	
+	// Storing data:
+var myJSON = JSON.stringify(describtions);
+localStorage.setItem("testJSON", myJSON);
+
+// Retrieving data:
+let text = localStorage.getItem("testJSON");
+let obj = JSON.parse(text);
+
+document.getElementById("jsonoutput").innerHTML = obj.{{crop_out}};
+	
+	</script>
+	<script>
+	var topstate={"ArharTur":"Top five growing states of Arhar/Tur are:- Maharashtra,Karnataka,Uttar Pradesh,Madhya Pradesh,Gujarat",
+	"Banana" : "Top five growing states of Banana are:- Tamil Nadu,Gujarat,Andhra Pradesh,Assam,Karnataka",
+	"Barley" : "Top five growing states of Barley are:- Uttar Pradesh,Rajasthan,Haryana,Madhya Pradesh,Punjab",
+	"Cabbage": "Top five growing states of Cabbage are:- Tamil Nadu,Andhra Pradesh,Manipur",
+	"Cashewnut" :"Top five growing states of Cashewnut are:- Kerala,Andhra Pradesh,Tamil Nadu,Karnataka,Goa",
+	"Castorseed" : "Top five growing states of Castorseed are:- Gujarat,Rajasthan,Telangana,Andhra Pradesh,Karnataka",
+	"Coconut" : "Top five growing states of Coconut are:- Kerala,Andhra Pradesh,Tamil Nadu,Assam,West Bengal",
+	"Condspcsother" :"Top five growing states of Condspcsother are:-Jammu & Kashmir",
+	"Cottonlint" : "Top five growing states of Cottonlint are:- Gujarat,Maharashtra,Telangana,Punjab,Haryana",
+	"Groundnut" : "Top five growing states of Groundnut are:-Gujarat,Tamil Nadu,Andhra Pradesh,Karnataka,Maharashtra",
+	"Jowar" : "Top five growing states of Jowar are:- Maharashtra,Karnataka,Madhya Pradesh,Tamil Nadu,Telangana",
+	"Maize" : "Top five growing states of Maize are:- Karnataka,Bihar,Telangana,Madhya Pradesh,Uttar Pradesh",
+	"Mango" : "Top five growing states of Mango are:- Andhra Pradesh,Kerala,Tamil Nadu,Karnataka,Maharashtra",
+	"MoongGreenGram" : "Top five growing states of MoongGreenGram are:- Maharashtra,Rajasthan,Telangana,Bihar,Odisha",
+	"Onion" : "Top five growing states of Onion are:- Gujarat,Karnataka,Madhya Pradesh,Andhra Pradesh,Uttar Pradesh",
+	"Potato" :"Top five growing states of Potato are:- Uttar Pradesh,West Bengal,Gujarat,Bihar,Assam",
+	"RapeseedMustard" :"Top five growing states of RapeseedMustard are:-Rajasthan,Uttar Pradesh,Madhya Pradesh,Haryana,West Bengal",
+	"Sunflower" : "Top five growing states of Sunflower are:- Karnataka,Andhra Pradesh,Maharashtra,Telangana,Bihar",
+	"Soyabean" : "Top five growing states of Soyabean are:- Madhya Pradesh,Maharashtra,Rajasthan,Telangana,Karnataka",
+	"Sugarcane" : "Top five growing states of Sugarcane are:- Uttar Pradesh,Maharashtra,Tamil Nadu,Karnataka,Andhra Pradesh",
+	"Tobacco" :"Top five growing states of Tobacco are:- Andhra Pradesh,Gujarat,Uttar Pradesh,Karnataka,Telangana",
+	"Urad" : "Top five growing states of Urad are:- Andhra Pradesh,Maharashtra,Uttar Pradesh,Madhya Pradesh,Tamil Nadu",
+	"Wheat" :"Top five growing states of Wheat are:- Uttar Pradesh,Punjab,Haryana,Madhya Pradesh,Rajasthan",
+	"Rice" : "Top five growing states of Wheat are:-West Bengal,Uttar Pradesh,Punjab,Andhra Pradesh,Odisha"
+	
+	
+	};
+	// Storing data:
+var myJSON1 = JSON.stringify(topstate);
+localStorage.setItem("testJSON1", myJSON1);
+
+// Retrieving data:
+let text1= localStorage.getItem("testJSON1");
+let obj1 = JSON.parse(text1);
+
+document.getElementById("jsonoutput1").innerHTML = obj1.{{crop_out}};
+	
+	</script>
