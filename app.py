@@ -1082,7 +1082,7 @@ def predict():
         prediction=0
         print('year_if')
         return render_template('index.html',
-                                   prediction_text='This tool is not predict for future',
+                                   prediction_text='The tool supports the prediction for next 2 years',
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1093,7 +1093,7 @@ def predict():
     if State_Name==30 and Crop==82 or State_Name==10 and Crop==82 or State_Name==6 and Crop==82 or State_Name==3 and Crop==82 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1104,7 +1104,7 @@ def predict():
     if State_Name==21 and Crop==109 or State_Name==8 and Crop==109 or State_Name==10 and Crop==109 or State_Name==26 and Crop==109 or State_Name==7 and Crop==109 or State_Name==17 and Crop==109 or State_Name==0 and Crop==109 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1117,7 +1117,7 @@ def predict():
     if State_Name==30 and Crop==57 or State_Name==30 and Crop==28 or State_Name==20 and Crop==28 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1128,7 +1128,7 @@ def predict():
     if State_Name==24 and Crop==98 or State_Name==10 and Crop==98 or State_Name==1 and Crop==98 or State_Name==5 and Crop==98 or State_Name==3 and Crop==98 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1139,7 +1139,7 @@ def predict():
     if State_Name==30 and Crop==103 or State_Name==32 and Crop==103 or State_Name==27 and Crop==103 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1150,7 +1150,7 @@ def predict():
     if State_Name==5 and Crop==106 or State_Name==6 and Crop==106 or State_Name==3 and Crop==106 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1162,7 +1162,7 @@ def predict():
     if State_Name==5 and Crop==54 or State_Name==6 and Crop==54 or State_Name==3 and Crop==54 or State_Name==30 and Crop==54 or State_Name==1 and Crop==54 or State_Name==4 and Crop==54:
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1173,7 +1173,7 @@ def predict():
     if State_Name==2 and Crop==94 or State_Name==30 and Crop==94 or State_Name==32 and Crop==94 or State_Name==3 and Crop==94 or State_Name==31 and Crop==94 or State_Name==7 and Crop==94:
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1184,7 +1184,7 @@ def predict():
     if State_Name==30 and Crop==111 or State_Name==32 and Crop==111 or State_Name==31 and Crop==111 or State_Name==30 and Crop==96 or State_Name==32 and Crop==96:
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1195,7 +1195,7 @@ def predict():
     if State_Name==30 and Crop==108 or State_Name==24 and Crop==108 or State_Name==15 and Crop==108 or State_Name==21 and Crop==108 or State_Name==10 and Crop==108 or State_Name==32 and Crop==108 or State_Name==26 and Crop==108 or State_Name==9 and Crop==108 or State_Name==28 and Crop==108:
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1206,7 +1206,7 @@ def predict():
     if State_Name==3 and Crop==121 or State_Name==0 and Crop==121 or State_Name==30 and Crop==67 or State_Name==6 and Crop==67 or State_Name==5 and Crop==67 or State_Name==3 and Crop==67 or State_Name==32 and Crop==67 or State_Name==1 and Crop==67:
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1218,7 +1218,7 @@ def predict():
     if State_Name==29 and Crop==119 or State_Name==32 and Crop==119 or State_Name==1 and Crop==119 or State_Name==30 and Crop==119 or State_Name==27 and Crop==119 or State_Name==31 and Crop==119:
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1229,7 +1229,7 @@ def predict():
     if State_Name==10 and Crop==117 or State_Name==16 and Crop==117 or State_Name==5 and Crop==117 or State_Name==9 and Crop==117 or State_Name==1 and Crop==117 or State_Name==6 and Crop==117 or State_Name==2 and Crop==117:
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1242,7 +1242,7 @@ def predict():
     if State_Name==0 and Crop==83 or State_Name==1 and Crop==83 or State_Name==2 and Crop==83 or State_Name==4 and Crop==83 or State_Name==5 and Crop==83 or State_Name==6 and Crop==83 or State_Name==7 and Crop==83 or State_Name==9 and Crop==83 or State_Name==10 and Crop==83 or State_Name==13 and Crop==83 or State_Name==18 and Crop==83 or State_Name==19 and Crop==83 or State_Name==20 and Crop==83 or State_Name==22 and Crop==83 or State_Name==24 and Crop==83 or State_Name==27 and Crop==83 or State_Name==28 and Crop==83 or State_Name==29 and Crop==83 or State_Name==30 and Crop==83 or State_Name==31 and Crop==83 or State_Name==32 and Crop==83 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1254,7 +1254,7 @@ def predict():
     if State_Name==0 and Crop==66 or State_Name==1 and Crop==66 or State_Name==2 and Crop==66 or State_Name==3 and Crop==66 or State_Name==6 and Crop==66 or State_Name==7 and Crop==66 or State_Name==8 and Crop==66 or State_Name==11 and Crop==66 or State_Name==13 and Crop==66 or State_Name==14 and Crop==66 or State_Name==15 and Crop==66 or State_Name==16 and Crop==66 or State_Name==17 and Crop==66 or State_Name==21 and Crop==66 or State_Name==23 and Crop==66 or State_Name==26 and Crop==66 or State_Name==31 and Crop==66 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1266,7 +1266,7 @@ def predict():
     if State_Name==0 and Crop==79 or State_Name==1 and Crop==79 or State_Name==2 and Crop==79 or State_Name==3 and Crop==79 or State_Name==5 and Crop==79 or State_Name==6 and Crop==79 or State_Name==7 and Crop==79 or State_Name==8 and Crop==79 or State_Name==9 and Crop==79 or State_Name==10 and Crop==79 or State_Name==11 and Crop==79 or State_Name==12 and Crop==79 or State_Name==17 and Crop==79 or State_Name==23 and Crop==79 or State_Name==25 and Crop==79 or State_Name==26 and Crop==79 or State_Name==27 and Crop==79 or State_Name==30 and Crop==79 or State_Name==31 and Crop==79 or State_Name==32 and Crop==79 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1278,7 +1278,7 @@ def predict():
     if State_Name==0 and Crop==122 or State_Name==1 and Crop==122 or State_Name==2 and Crop==122 or State_Name==3 and Crop==122 or State_Name==5 and Crop==122 or State_Name==6 and Crop==122 or State_Name==7 and Crop==122 or State_Name==8 and Crop==122 or State_Name==10 and Crop==122 or State_Name==11 and Crop==122 or State_Name==12 and Crop==122 or State_Name==14 and Crop==122 or State_Name==15 and Crop==122 or State_Name==16 and Crop==122 or State_Name==17 and Crop==122 or State_Name==21 and Crop==122 or State_Name==23 and Crop==122 or State_Name==26 and Crop==122 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1291,7 +1291,7 @@ def predict():
         
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1303,7 +1303,7 @@ def predict():
     if State_Name==0 and Crop==22 or State_Name==1 and Crop==22 or State_Name==2 and Crop==22 or State_Name==3 and Crop==22 or State_Name==4 and Crop==22 or State_Name==5 and Crop==22 or State_Name==7 and Crop==22 or State_Name==8 and Crop==22 or State_Name==9 and Crop==22 or State_Name==11 and Crop==22 or State_Name==13 and Crop==22 or State_Name==15 and Crop==22 or State_Name==27 and Crop==22 or State_Name==30 and Crop==22 or State_Name==31 and Crop==22 or State_Name==32 and Crop==22 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1315,7 +1315,7 @@ def predict():
     if State_Name==0 and Crop==115 or State_Name==1 and Crop==115 or State_Name==2 and Crop==115 or State_Name==3 and Crop==115 or State_Name==4 and Crop==115 or State_Name==6 and Crop==115 or State_Name==7 and Crop==115 or State_Name==8 and Crop==115 or State_Name==9 and Crop==115 or State_Name==10 and Crop==115 or State_Name==11 and Crop==115 or State_Name==12 and Crop==115 or State_Name==15 and Crop==115 or State_Name==17 and Crop==115 or State_Name==25 and Crop==115 or State_Name==27 and Crop==115 or State_Name==30 and Crop==115 or State_Name==31 and Crop==115 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1327,7 +1327,7 @@ def predict():
     if State_Name==0 and Crop==102 or State_Name==1 and Crop==102 or State_Name==2 and Crop==102 or State_Name==3 and Crop==102 or State_Name==4 and Crop==102 or State_Name==5 and Crop==102 or State_Name==6 and Crop==102 or State_Name==7 and Crop==102 or State_Name==8 and Crop==102 or State_Name==9 and Crop==102 or State_Name==11 and Crop==102 or State_Name==13 and Crop==102 or State_Name==17 and Crop==102 or State_Name==24 and Crop==102 or State_Name==25 and Crop==102 or State_Name==26 and Crop==102 or State_Name==27 and Crop==102 or State_Name==30 and Crop==102 or State_Name==31 and Crop==102 or State_Name==32 and Crop==102 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1339,7 +1339,7 @@ def predict():
     if State_Name==0 and Crop==65 or State_Name==1 and Crop==65 or State_Name==3 and Crop==65 or State_Name==5 and Crop==65 or State_Name==6 and Crop==65 or State_Name==7 and Crop==65 or State_Name==8 and Crop==65 or State_Name==9 and Crop==65 or State_Name==11 and Crop==65 or State_Name==14 and Crop==65 or State_Name==16 and Crop==65 or State_Name==17 and Crop==65 or State_Name==19 and Crop==65 or State_Name==24 and Crop==65 or State_Name==27 and Crop==65 or State_Name==30 and Crop==65 or State_Name==31 and Crop==65  or State_Name==32 and Crop==65 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1351,7 +1351,7 @@ def predict():
     if State_Name==0 and Crop==70 or State_Name==1 and Crop==70 or State_Name==3 and Crop==70 or State_Name==5 and Crop==70 or State_Name==6 and Crop==70 or State_Name==7 and Crop==70 or State_Name==8 and Crop==70 or State_Name==11 and Crop==70 or State_Name==12 and Crop==70 or State_Name==13 and Crop==70 or State_Name==14 and Crop==70 or State_Name==16 and Crop==70 or State_Name==17 and Crop==70 or State_Name==19 and Crop==70 or State_Name==20 and Crop==70 or State_Name==21 and Crop==70 or State_Name==22 and Crop==70 or State_Name==23 and Crop==70 or State_Name==26 and Crop==70 or State_Name==27 and Crop==70 or State_Name==29 and Crop==70 or State_Name==30 and Crop==70 or State_Name==31 and Crop==70 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1365,7 +1365,7 @@ def predict():
     if State_Name==0 and Crop==78 or State_Name==2 and Crop==78 or State_Name==3 and Crop==78 or State_Name==4 and Crop==78 or State_Name==6 and Crop==78 or State_Name==7 and Crop==78 or State_Name==8 and Crop==78 or State_Name==9 and Crop==78 or State_Name==11 and Crop==78 or State_Name==17 and Crop==78 or State_Name==21 and Crop==78 or State_Name==26 and Crop==78 or State_Name==27 and Crop==78 or State_Name==29 and Crop==78 or State_Name==30 and Crop==78 or State_Name==31 and Crop==78 :
         prediction=0
         return render_template('index.html',
-                                   prediction_text='crop production prediction {} tonne because this crop is not grown in this state'.format(prediction),
+                                   prediction_text='The predicted production of the crop is {} tonne as selected crop is not cultivated in this state'.format(prediction),
                                    state='State_Name :{}'.format(State_Name1),
                                    district='District_Name :{}'.format(District_Name1),
                                    year='Crop_Year :{}'.format(Crop_Year1),
@@ -1379,7 +1379,7 @@ def predict():
         
             
     else:
-        return render_template('index.html',prediction_text='crop production prediction {} tonne'.format(prediction),
+        return render_template('index.html',prediction_text='The predicted production of the selected crop is {} tonne'.format(prediction),
                               state='State_Name :{}'.format(State_Name1),
                               district='District_Name :{}'.format(District_Name1),
                               year='Crop_Year :{}'.format(Crop_Year1),
