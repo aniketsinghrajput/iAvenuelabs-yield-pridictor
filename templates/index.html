@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 </head>
-<h1 style="background-color:powderblue;">iAvenue Yield Predictor</h1>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="col-lg-12 col-md-12  col-sm-12" style="background-color: #D8D8D8">
+<h1 style="background-color:powderblue; text-align: center;">iAvenue Yield Predictor</h1>
+
 
  <form action="{{url_for('predict')}}"method="post">
+ <div class="col-lg-12 col-md-12  col-sm-12" style="background-color: #D8D8D8">
      <!--div class="wrapper"-->
-	 <select id="parent_select" name="State_Name"><option>Select_State</option></select>
-	 <select id="child_select" name="District_Name"><option>Select_District</option></select>
+	 <select id="parent_select" name="State_Name" ><option>Select_State</option></select>
+	 <select id="child_select" name="District_Name" ><option>Select_District</option></select>
      <!--/div-->
 
     <!--select id="Crop_Year" name="Crop_Year">
@@ -46,7 +52,7 @@
 
 		</select-->
 		<input type="number" name="Crop_Year" placeholder="Crop_Year" required="required" />
-		<select id="parent_select1" name="Season"><option>Select_Season</option></select>
+		<select id="parent_select1" name="Season" ><option>Select_Season</option></select>
 		<select id="child_select1" name="Crop"><option>Select_Crop</option></select>
 		
 		<!--input type="text" name="Season" placeholder="Season" required="required" />
@@ -55,12 +61,15 @@
 
 
 		
-		<button type="submit" class="btn btn-primary btn-block btn-large">predict</button>
+		<button type="submit" >predict</button>
+		</div>
 		
 	</form>
-	<div>
+	
 	<br>
 	<br>
+	<div class="col-lg-12 col-md-12  col-sm-12" style="background-color: #D8D8D8">
+	<div class="col-lg-6 col-md-6  col-sm-12 " style="background-color: #D8D8D8">
 	{{prediction_text}}
 	<br>
 	{{state}}
@@ -73,10 +82,9 @@
 	<br>
 	{{crop}}
 	<br>
-	{{Area}}
+	{{Area_enter}}
 	<br>
 	</div>
-	<br>
 	<!--{{prediction_text1}}
 	<br>
 	<br>
@@ -102,18 +110,36 @@
 	{{crop4}}
 	<br>
 	{{crop5}}-->
-	<br>
+	<div class="col-lg-6 col-md-6  col-sm-12">
 	<div>{{crop_div}}</div>
 	<div id="jsonoutput" style="width: 100%; height: 100%"></div>
+	</div>
+	</div>
 	<br>
 	<br>
-	<div id="jsonoutput1" style="width: 100%; height: 100%"></div>
 	<br>
-	 <div id="container" style="width: 100%; height: 100%"></div>
-	 <div id="container1" style="width: 100%; height: 100%"></div>
+	<br>
+	<div id="jsonoutput1" class="col-lg-12 col-md-12  col-sm-12" style="background-color: #D8D8D8"></div>
+	<br>
+	<div >
+	 <div id="container_new" style="width: 50%; height: 100%" class="col-lg-6 col-md-6  col-sm-12"></div>
+	 <div id="container1" style="width: 50%; height: 100%" class="col-lg-6 col-md-6  col-sm-12"></div>
+	 </div>
 	 <!--div id="container2" style="width: 100%; height: 100%"></div-->
 	</div>
-	
+	<div class="container-fluid">
+  <div class="row">
+  
+    <div class="col-sm-12" style="background-color:#AAF0D1;">
+	<h5 >iAvenue Labs</h5>
+
+        <p>
+          Unblocking innovation
+        </p>
+	</div>
+    
+  </div>
+</div>
 	</body>
 	</html>
 	
@@ -296,11 +322,11 @@ el_parent1.addEventListener('change', function populate_child1(e){
 		//chart1.data(data);
 		//chart2.data(data);
         // set the chart title
-        chart.title("Crop production prediction");
+        chart.title("Various of production for various year");
 		//chart1.title("Crop production prediction");
 		//chart2.title("Crop production prediction");
         // draw
-        chart.container("container");
+        chart.container("container_new");
         chart.draw();
 		//chart1.container("container1");
 		//chart1.draw();
@@ -336,7 +362,7 @@ el_parent1.addEventListener('change', function populate_child1(e){
 		//chart2.data(data);
         // set the chart title
         //chart.title("Crop production prediction");
-		chart1.title("Area VS Production");
+		chart1.title("Variation of production for different area");
 		//chart2.title("Crop production prediction");
         // draw
         //chart.container("container");
