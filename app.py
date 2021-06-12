@@ -1032,7 +1032,7 @@ def predict():
             crop2=Crop1
         Crop=Crop_dict.get(Crop)
         Area=float(request.form['Area'])
-        Area1=Area
+        Area_in=Area
 
     print([[State_Name,District_Name,Crop_Year,Season,Crop,Area]] ) 
     print([[State_Name,District_Name,Crop_Year2,Season,Crop,Area]] )
@@ -1088,7 +1088,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Arhar/Tur
     if State_Name==30 and Crop==82 or State_Name==10 and Crop==82 or State_Name==6 and Crop==82 or State_Name==3 and Crop==82 :
         prediction=0
@@ -1099,7 +1099,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Banana
     if State_Name==21 and Crop==109 or State_Name==8 and Crop==109 or State_Name==10 and Crop==109 or State_Name==26 and Crop==109 or State_Name==7 and Crop==109 or State_Name==17 and Crop==109 or State_Name==0 and Crop==109 :
         prediction=0
@@ -1110,7 +1110,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     
     #Cabbage & Cauliflower
     
@@ -1123,7 +1123,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Groundnut
     if State_Name==24 and Crop==98 or State_Name==10 and Crop==98 or State_Name==1 and Crop==98 or State_Name==5 and Crop==98 or State_Name==3 and Crop==98 :
         prediction=0
@@ -1134,7 +1134,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Maize
     if State_Name==30 and Crop==103 or State_Name==32 and Crop==103 or State_Name==27 and Crop==103 :
         prediction=0
@@ -1145,7 +1145,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1)) 
+                                   Area='Area :{} ha'.format(Area_in)) 
     #Mango
     if State_Name==5 and Crop==106 or State_Name==6 and Crop==106 or State_Name==3 and Crop==106 :
         prediction=0
@@ -1156,7 +1156,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     
      #Moong
     if State_Name==5 and Crop==54 or State_Name==6 and Crop==54 or State_Name==3 and Crop==54 or State_Name==30 and Crop==54 or State_Name==1 and Crop==54 or State_Name==4 and Crop==54:
@@ -1168,7 +1168,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Onion
     if State_Name==2 and Crop==94 or State_Name==30 and Crop==94 or State_Name==32 and Crop==94 or State_Name==3 and Crop==94 or State_Name==31 and Crop==94 or State_Name==7 and Crop==94:
         prediction=0
@@ -1179,7 +1179,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Potato & Rapseed(96)
     if State_Name==30 and Crop==111 or State_Name==32 and Crop==111 or State_Name==31 and Crop==111 or State_Name==30 and Crop==96 or State_Name==32 and Crop==96:
         prediction=0
@@ -1190,7 +1190,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Soyabean
     if State_Name==30 and Crop==108 or State_Name==24 and Crop==108 or State_Name==15 and Crop==108 or State_Name==21 and Crop==108 or State_Name==10 and Crop==108 or State_Name==32 and Crop==108 or State_Name==26 and Crop==108 or State_Name==9 and Crop==108 or State_Name==28 and Crop==108:
         prediction=0
@@ -1201,7 +1201,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Sugarcane & Urad
     if State_Name==3 and Crop==121 or State_Name==0 and Crop==121 or State_Name==30 and Crop==67 or State_Name==6 and Crop==67 or State_Name==5 and Crop==67 or State_Name==3 and Crop==67 or State_Name==32 and Crop==67 or State_Name==1 and Crop==67:
         prediction=0
@@ -1212,7 +1212,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Wheat
     
     if State_Name==29 and Crop==119 or State_Name==32 and Crop==119 or State_Name==1 and Crop==119 or State_Name==30 and Crop==119 or State_Name==27 and Crop==119 or State_Name==31 and Crop==119:
@@ -1224,7 +1224,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Rice
     if State_Name==10 and Crop==117 or State_Name==16 and Crop==117 or State_Name==5 and Crop==117 or State_Name==9 and Crop==117 or State_Name==1 and Crop==117 or State_Name==6 and Crop==117 or State_Name==2 and Crop==117:
         prediction=0
@@ -1235,7 +1235,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     
     #Barley
     
@@ -1248,7 +1248,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Cashewnut
     
     if State_Name==0 and Crop==66 or State_Name==1 and Crop==66 or State_Name==2 and Crop==66 or State_Name==3 and Crop==66 or State_Name==6 and Crop==66 or State_Name==7 and Crop==66 or State_Name==8 and Crop==66 or State_Name==11 and Crop==66 or State_Name==13 and Crop==66 or State_Name==14 and Crop==66 or State_Name==15 and Crop==66 or State_Name==16 and Crop==66 or State_Name==17 and Crop==66 or State_Name==21 and Crop==66 or State_Name==23 and Crop==66 or State_Name==26 and Crop==66 or State_Name==31 and Crop==66 :
@@ -1260,7 +1260,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #castor
     
     if State_Name==0 and Crop==79 or State_Name==1 and Crop==79 or State_Name==2 and Crop==79 or State_Name==3 and Crop==79 or State_Name==5 and Crop==79 or State_Name==6 and Crop==79 or State_Name==7 and Crop==79 or State_Name==8 and Crop==79 or State_Name==9 and Crop==79 or State_Name==10 and Crop==79 or State_Name==11 and Crop==79 or State_Name==12 and Crop==79 or State_Name==17 and Crop==79 or State_Name==23 and Crop==79 or State_Name==25 and Crop==79 or State_Name==26 and Crop==79 or State_Name==27 and Crop==79 or State_Name==30 and Crop==79 or State_Name==31 and Crop==79 or State_Name==32 and Crop==79 :
@@ -1272,7 +1272,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
      #coconut
     
     if State_Name==0 and Crop==122 or State_Name==1 and Crop==122 or State_Name==2 and Crop==122 or State_Name==3 and Crop==122 or State_Name==5 and Crop==122 or State_Name==6 and Crop==122 or State_Name==7 and Crop==122 or State_Name==8 and Crop==122 or State_Name==10 and Crop==122 or State_Name==11 and Crop==122 or State_Name==12 and Crop==122 or State_Name==14 and Crop==122 or State_Name==15 and Crop==122 or State_Name==16 and Crop==122 or State_Name==17 and Crop==122 or State_Name==21 and Crop==122 or State_Name==23 and Crop==122 or State_Name==26 and Crop==122 :
@@ -1284,7 +1284,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #Coffee
     
     if State_Name==0 and Crop==105 or State_Name==1 and Crop==105 or State_Name==2 and Crop==105 or State_Name==3 and Crop==105 or State_Name==4 and Crop==105 or State_Name==5 and Crop==105 or State_Name==6 and Crop==105 or State_Name==7 and Crop==105 or State_Name==8 and Crop==105 or State_Name==9 and Crop==105 or State_Name==10 and Crop==105 or State_Name==11 and Crop==105 or State_Name==12 and Crop==105 or State_Name==14 and Crop==105 or State_Name==15 and Crop==105 or State_Name==16 and Crop==105 or State_Name==17 and Crop==105 or State_Name==19 and Crop==105 or State_Name==20 and Crop==105 or State_Name==21 and Crop==105 or State_Name==22 and Crop==105 or State_Name==23 and Crop==105 or State_Name==25 and Crop==105 or State_Name==26 and Crop==105 or State_Name==27 and Crop==105 or State_Name==30 and Crop==105 or State_Name==31 and Crop==105 :
@@ -1297,7 +1297,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
      #CONDIMENTS 
     
     if State_Name==0 and Crop==22 or State_Name==1 and Crop==22 or State_Name==2 and Crop==22 or State_Name==3 and Crop==22 or State_Name==4 and Crop==22 or State_Name==5 and Crop==22 or State_Name==7 and Crop==22 or State_Name==8 and Crop==22 or State_Name==9 and Crop==22 or State_Name==11 and Crop==22 or State_Name==13 and Crop==22 or State_Name==15 and Crop==22 or State_Name==27 and Crop==22 or State_Name==30 and Crop==22 or State_Name==31 and Crop==22 or State_Name==32 and Crop==22 :
@@ -1309,7 +1309,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
      #Cotton iint 
     
     if State_Name==0 and Crop==115 or State_Name==1 and Crop==115 or State_Name==2 and Crop==115 or State_Name==3 and Crop==115 or State_Name==4 and Crop==115 or State_Name==6 and Crop==115 or State_Name==7 and Crop==115 or State_Name==8 and Crop==115 or State_Name==9 and Crop==115 or State_Name==10 and Crop==115 or State_Name==11 and Crop==115 or State_Name==12 and Crop==115 or State_Name==15 and Crop==115 or State_Name==17 and Crop==115 or State_Name==25 and Crop==115 or State_Name==27 and Crop==115 or State_Name==30 and Crop==115 or State_Name==31 and Crop==115 :
@@ -1321,7 +1321,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     #jowar
     
     if State_Name==0 and Crop==102 or State_Name==1 and Crop==102 or State_Name==2 and Crop==102 or State_Name==3 and Crop==102 or State_Name==4 and Crop==102 or State_Name==5 and Crop==102 or State_Name==6 and Crop==102 or State_Name==7 and Crop==102 or State_Name==8 and Crop==102 or State_Name==9 and Crop==102 or State_Name==11 and Crop==102 or State_Name==13 and Crop==102 or State_Name==17 and Crop==102 or State_Name==24 and Crop==102 or State_Name==25 and Crop==102 or State_Name==26 and Crop==102 or State_Name==27 and Crop==102 or State_Name==30 and Crop==102 or State_Name==31 and Crop==102 or State_Name==32 and Crop==102 :
@@ -1333,7 +1333,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
      #sunflower
     
     if State_Name==0 and Crop==65 or State_Name==1 and Crop==65 or State_Name==3 and Crop==65 or State_Name==5 and Crop==65 or State_Name==6 and Crop==65 or State_Name==7 and Crop==65 or State_Name==8 and Crop==65 or State_Name==9 and Crop==65 or State_Name==11 and Crop==65 or State_Name==14 and Crop==65 or State_Name==16 and Crop==65 or State_Name==17 and Crop==65 or State_Name==19 and Crop==65 or State_Name==24 and Crop==65 or State_Name==27 and Crop==65 or State_Name==30 and Crop==65 or State_Name==31 and Crop==65  or State_Name==32 and Crop==65 :
@@ -1345,7 +1345,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
      #Tea
     
     if State_Name==0 and Crop==70 or State_Name==1 and Crop==70 or State_Name==3 and Crop==70 or State_Name==5 and Crop==70 or State_Name==6 and Crop==70 or State_Name==7 and Crop==70 or State_Name==8 and Crop==70 or State_Name==11 and Crop==70 or State_Name==12 and Crop==70 or State_Name==13 and Crop==70 or State_Name==14 and Crop==70 or State_Name==16 and Crop==70 or State_Name==17 and Crop==70 or State_Name==19 and Crop==70 or State_Name==20 and Crop==70 or State_Name==21 and Crop==70 or State_Name==22 and Crop==70 or State_Name==23 and Crop==70 or State_Name==26 and Crop==70 or State_Name==27 and Crop==70 or State_Name==29 and Crop==70 or State_Name==30 and Crop==70 or State_Name==31 and Crop==70 :
@@ -1357,7 +1357,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
     
     
     #Tobacco
@@ -1371,7 +1371,7 @@ def predict():
                                    year='Crop_Year :{}'.format(Crop_Year1),
                                    season='Season :{}'.format(Season1),
                                    crop='Crop :{}'.format(Crop1),
-                                   Area='Area :{} ha'.format(Area1))
+                                   Area='Area :{} ha'.format(Area_in))
         
             
        
@@ -1387,7 +1387,7 @@ def predict():
                               crop='Crop :{}'.format(Crop1),
                               crop_div='Description of Crop :{}'.format(Crop1),
                               crop_out=crop2,
-                              Area='Area :{} ha'.format(Area1),
+                              Area='Area :{} ha'.format(Area_in),
                               #prediction_text1='crop production prediction1 {} tonne'.format(prediction1),
                               #prediction_text2='crop production prediction2 {} tonne'.format(prediction2),
                               #prediction_text3='crop production prediction3 {} tonne'.format(prediction3),
