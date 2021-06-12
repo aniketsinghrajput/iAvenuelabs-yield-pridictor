@@ -1385,6 +1385,7 @@ def predict():
                               year='Crop_Year :{}'.format(Crop_Year1),
                               season='Season :{}'.format(Season1),
                               crop='Crop :{}'.format(Crop1),
+                              crop_div='Description of Crop :{}'.format(Crop1),
                               crop_out=crop2,
                               Area='Area :{} ha'.format(Area1),
                               #prediction_text1='crop production prediction1 {} tonne'.format(prediction1),
